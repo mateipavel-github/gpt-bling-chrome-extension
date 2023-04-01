@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Bling!",
+  "version": "0.0.1",
+  "description": "A simple Chrome extension to share ChatGPT conversations with your friends.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*", "https://api.upload.io/*"],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
